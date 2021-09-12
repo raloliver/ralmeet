@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1
+# =================================
+# = for docket propose: docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+# =================================
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ralmeet?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+
+logging:
+  level:
+    org.springframework: ERROR
+    org.flywaydb: ERROR
